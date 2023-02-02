@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<style>
+    body{
+        margin: 0; /* Remove default margin */
+    }
+    iframe{      
+       
+        height: 100vh;  /* Set height to 100% of the viewport height */   
+        width: 100vw;  /* Set width to 100% of the viewport width */     
+        border: none; /* Remove default border */
+        background: lightyellow; /* Just for styling */
+    }
+</style>
+</head>
+<body >
+<p>
+
+
+        <label for="very-poor">
+            <input type="radio" name="rate" value="emp" id="Employee" data-toggle="pills"> Very poor
+        </label>
+        <label for="poor">
+            <input type="radio" name="rate" value="comp" id="Company" data-toggle="pills"> Poor
+        </label>
+       
+    </p>
+ <button id="btnRate" onclick="Check()">Submit</button>
+
+
+
+
+  <div id="home" style="display:none">
+  <div>
+    <iframe src="login_page.html" 
+     frameborder="0"
+			marginheight="0"
+			marginwidth="0"
+			width="100%"
+			height="100%"
+			scrolling="auto"></iframe>
+  </div>
+</div>
+
+<div id="outp"></div>
+
+<div id="comp" style="display:none">
+  <div>
+    <iframe src="comp_login.html" 
+     frameborder="0"
+			marginheight="0"
+			marginwidth="0"
+			width="100%"
+			height="100%"
+			scrolling="auto"></iframe>
+  </div>
+</div>
+
+
+  <script>
+function Check(){
+let error=false;
+
+             var checkboxes = 
+                document.getElementsByName('rate');
+  
+          
+  
+            for (var i = 0; i < checkboxes.length; i++) {
+
+                if (checkboxes[i].checked==true) {
+                   
+if(checkboxes[i].value=="emp"){
+document.getElementById("home").style.display="block";
+error=false;
+}
+
+else if(checkboxes[i].value=="comp"){
+document.getElementById("comp").style.display="block";
+error=false;
+}
+
+}
+else{
+error=true;
+if(checkboxes[i].value=="emp"){
+document.getElementById("home").style.display="none";
+}
+else{
+document.getElementById("comp").style.display="none";
+}
+}
+}    if (err){
+        return false;
+        }
+
+            }
+  </script>
+</body>
+</html>
